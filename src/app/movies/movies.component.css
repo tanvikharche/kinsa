@@ -1,0 +1,94 @@
+
+.left-panel {
+	background-color: #F0F0F0; 
+	height: 100%;
+}
+
+.right-panel {
+	height: 100%;
+}
+
+.moreBtn {
+    color: #66B3FF;
+    height: 35px;
+    border: none;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+.gridContainer {
+    overflow-y: scroll;
+    height: 100%;
+    padding: 12px 12px 24px 12px;
+}
+
+.leftPanelContent {
+	padding: 23px;
+}
+
+.heading {
+	font-weight: bold;
+    font-size: 27px;
+    text-align: center;
+}
+
+.subHeading {
+	font-weight: bold;
+}
+
+.searchBoxDiv{
+	font-size: 14px;
+	padding: 20px;
+}    
+
+#search-box {
+	width: 100%;
+}
+
+.sortDiv {
+	padding: 5px;
+}
+
+.radioBtnDiv label, .radioBtnDiv input {
+	font-weight: normal;
+	cursor: pointer;
+}
+
+.more-button {
+	padding-top: 12px;
+}
+
+.noRecords {
+	font-size: 25px;
+	padding: 70px;
+}
+
+@media only screen 
+and (max-width : 991px)  {
+	.left-panel {
+		height: 150px;
+	}
+	.right-panel {
+		height: calc(100% - 150px);
+	}
+	.sortDiv {
+    	padding: 25px;
+    }
+}
+
+@media only screen
+/*and (min-device-width : 375px) */
+and (max-width : 767px) {
+	.left-panel {
+		height: 145px;
+	}
+	.right-panel {
+		height: calc(100% - 145px);
+	}
+	.leftPanelContent {
+		padding: 5px;
+	}
+	.sortDiv {
+    	padding: 0 5px;
+    }
+}

@@ -1,0 +1,42 @@
+<div id="container" class="row">
+	<div id="left-panel" class="col-md-3 col-sm-12 col-xs-12 left-panel">
+	 	<div class="row leftPanelContent"> 
+			<div class="col-md-12 col-sm-12 col-xs-12 heading">Movies Filmed in SF
+			</div>
+			<div class="col-md-12 col-sm-5 col-xs-12 searchBoxDiv">
+				<input id="search-box" class="form-control" [(ngModel)]="searchTerm" (keyup)="search(searchTerm)"
+					placeholder="Search Titles, Years" />
+			</div>
+			<div class="col-md-12 col-sm-7 col-xs-12">
+				<div class="row sortDiv">
+					<div class="col-md-12 col-sm-4 col-xs-4 subHeading">Sort Movies </div>
+					<div *ngFor="let label of sortingLabels" class="col-md-12 col-sm-4 col-xs-4 
+							radioBtnDiv">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<input type="radio" #radioBtn id="radioBtn{{label.sortField}}" name="radioBtn" value={{label.sortField}} (click)="sortData(radioBtn.value)" >
+									<label for="radioBtn{{label.sortField}}">
+										{{ label.textField }}
+									</label>
+								</div>
+							</div>
+						</div>
+	   		 		</div>
+	   		 	</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="right-panel" class="col-md-9 col-sm-12 col-xs-12 right-panel">
+		<div *ngIf="!noRecordsFound" class="row gridContainer">
+			<div *ngFor="let movie of movies" class="col-md-2 col-sm-4 col-xs-6">
+				<movie-details [movie] = "movie"> </movie-details>
+			</div>
+			<div  *ngIf="displayMoreBtn" class="more-button col-md-offset-5 col-md-2 col-sm-offset-4 col-sm-4 col-xs-offset-3 col-xs-6">
+				<button type="button" class="moreBtn btn" (click)="renderData()">More</button>
+			</div>
+		</div>
+		<div *ngIf="noRecordsFound" class="noRecords"> No Records Found.</div>
+	</div>
+</div>

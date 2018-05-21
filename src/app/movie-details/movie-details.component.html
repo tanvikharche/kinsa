@@ -1,0 +1,12 @@
+<div class="movieDetails" class="movieDetails" (mouseenter)="showTooltip(movie)" (mouseleave)="hideTooltip()">
+	<div class="title">{{ movie.title }}</div>
+	<div class="year">{{ movie.release_year }}</div>
+	<div>Location:
+		<div class="location">{{ movie.locations }}</div>
+	</div> 
+</div>
+
+
+<div *ngIf="displayTooltip">
+	<tooltip [movieDetail] = "movieDetail"></tooltip>
+</div>
