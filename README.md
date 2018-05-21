@@ -6,6 +6,6 @@ Run the following commands to start the application
 
 * Open the terminal and "cd" into the checked out directory
 * npm install
-* ng serve
+* ng serve --open
 
 The "ng serve" command will open the browser and navigte to "http://localhost:4200"
